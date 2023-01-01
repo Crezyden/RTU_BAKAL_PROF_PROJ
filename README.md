@@ -1,3 +1,4 @@
 # RĪGAS TEHNISKĀ UNIVERSITĀTE
-# bakalaura profesionālā studiju programmas “Datorsistēmas”_
 ## PROJEKTA DAĻA
+## STUDENTS: Deniss Kargins	
+### Apl. nr.- 181LDK001
