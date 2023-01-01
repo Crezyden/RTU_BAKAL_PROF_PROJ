@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "a4c1c9f0-e00f-47ba-9e70-05bdee03d232",
+		"name": "Receipt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22632436"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Admin\",\r\n        \"email\": \"admins@inbox.lv\",\r\n        \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"email\": \"1@inbox.lv\",\r\n        \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluc0BpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzYzRhMDFjNGNjNGI1ZDQ2NGUxNmIiLCJ2YWx1ZSI6IkFkbWluIiwiZGVzY3JpcHRpb24iOiJBZG1pbmlzdHJhdG9yIiwiX192IjowfV0sImlhdCI6MTY3MTI4MTkzOSwiZXhwIjoxNjcxMjg1NTM5fQ.BMTeBtixsQAU9rzLTJ76XfQXjBE8SD2QBQOR8dLD0RY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{       \r\n        \"value\": \"Admin\",\r\n        \"Userid\": \"6399df333fadfd7bdd92af2a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/user/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"user",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profil users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRiYzZkZjZkNTEwMjdjYTU3MDI1ZSIsImVtYWlsIjoiMUBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzOTkzZWNmODdjNWY1NDliMmRlNmYiLCJ2YWx1ZSI6IlVzZXIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9XSwiaWF0IjoxNjcxMzc2MDM5LCJleHAiOjE2NzEzNzk2Mzl9.0w7L1zsgOKCISdKrFbEZL6ykrwgv7tOhkstQtArXsjs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/user/profil",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"user",
+								"profil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alluser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRhYzMzYTEyM2RkMTVhMWMzZjE4OSIsImVtYWlsIjoiYWRtaW5zQGluYm94Lmx2Iiwicm9sZSI6W3sidXNlciI6W10sIl9pZCI6IjYzNjNjNGEwMWM0Y2M0YjVkNDY0ZTE2YiIsInZhbHVlIjoiQWRtaW4iLCJkZXNjcmlwdGlvbiI6IkFkbWluaXN0cmF0b3IiLCJfX3YiOjB9XSwiaWF0IjoxNjcxNTUxNzEwLCJleHAiOjE2NzE1NTUzMTB9.HfNk5liYFXrILTqBA4oC0xZttShzsR_TngZguVrrKZw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Allrole",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "receipt",
+			"item": [
+				{
+					"name": "Add receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRiYzZkZjZkNTEwMjdjYTU3MDI1ZSIsImVtYWlsIjoiMUBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzOTkzZWNmODdjNWY1NDliMmRlNmYiLCJ2YWx1ZSI6IlVzZXIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9XSwiaWF0IjoxNjcxNDQ2MDU4LCJleHAiOjE2NzE0NDk2NTh9.biE4WddfgmCNHj4--QvNTXBw8M84JEwvfofeD3p1yf0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pop",
+									"type": "text"
+								},
+								{
+									"key": "shop_name",
+									"value": "rd",
+									"type": "text"
+								},
+								{
+									"key": "price ",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "recfile",
+									"type": "file",
+									"src": "/C:/Users/Denis/Desktop/photo_2022-12-13_13-27-57.jpg"
+								},
+								{
+									"key": "purc_date",
+									"value": "20.02.2022",
+									"type": "text"
+								},
+								{
+									"key": "val_period",
+									"value": "20.02.2024",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3500/receipt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"receipt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shop Add receipt users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTlkZjMzM2ZhZGZkN2JkZDkyYWYyYSIsImVtYWlsIjoiOEBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzY0MGNiNTllZjhlOWFjMGNiZjhmMGIiLCJ2YWx1ZSI6IlNob3AiLCJkZXNjcmlwdGlvbiI6IlNob3AtYWRtaW5pc3RyYXRvciIsIl9fdiI6MH1dLCJpYXQiOjE2NzE1NTQwNDMsImV4cCI6MTY3MTU1NzY0M30.Zsty9ctf5-uzPT485vuXYHwUHSHfEeJWJ1OFSPUPTsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pop",
+									"type": "text"
+								},
+								{
+									"key": "shop_name",
+									"value": "rd",
+									"type": "text"
+								},
+								{
+									"key": "price ",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "recfile",
+									"type": "file",
+									"src": "/C:/Users/Denis/Desktop/photo_2022-12-13_13-27-57.jpg"
+								},
+								{
+									"key": "purc_date",
+									"value": "20.02.2022",
+									"type": "text"
+								},
+								{
+									"key": "val_period",
+									"value": "20.02.2024",
+									"type": "text"
+								},
+								{
+									"key": "UsersEmail",
+									"value": "usevcfdr@inbox.lv",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3500/receipt/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"receipt",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRiYzZkZjZkNTEwMjdjYTU3MDI1ZSIsImVtYWlsIjoiMUBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzOTkzZWNmODdjNWY1NDliMmRlNmYiLCJ2YWx1ZSI6IlVzZXIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9XSwiaWF0IjoxNjcxMzY4MTg2LCJleHAiOjE2NzEzNzE3ODZ9.9bnHbxIBKacLSrPBUsXGYshH0jph-T3KVM_qP1K2-Z0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/receipt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"receipt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All receipt :id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRiYzZkZjZkNTEwMjdjYTU3MDI1ZSIsImVtYWlsIjoiMUBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzOTkzZWNmODdjNWY1NDliMmRlNmYiLCJ2YWx1ZSI6IlVzZXIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9XSwiaWF0IjoxNjcxMzY4MTg2LCJleHAiOjE2NzEzNzE3ODZ9.9bnHbxIBKacLSrPBUsXGYshH0jph-T3KVM_qP1K2-Z0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/receipt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"receipt",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "All Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{       \r\n        \"value\": \"\",\r\n        \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tag",
+			"item": [
+				{
+					"name": "Add taGS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWRiYzZkZjZkNTEwMjdjYTU3MDI1ZSIsImVtYWlsIjoiMUBpbmJveC5sdiIsInJvbGUiOlt7InVzZXIiOltdLCJfaWQiOiI2MzYzOTkzZWNmODdjNWY1NDliMmRlNmYiLCJ2YWx1ZSI6IlVzZXIiLCJkZXNjcmlwdGlvbiI6IlVzZXIiLCJfX3YiOjB9XSwiaWF0IjoxNjcxMzk1ODQ5LCJleHAiOjE2NzEzOTk0NDl9.GzkHWcxgkf9ADhWk0CCeHNsUWHEtCqWD7639iYiTpAg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagsname\":\"elektronika\" \r\n    \"description\":\"elektroni\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/receipt/tags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"receipt",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwQGluYm94Lmx2Iiwicm9sZSI6W3sidXNlciI6W10sIl9pZCI6IjYzNjM5OTNlY2Y4N2M1ZjU0OWIyZGU2ZiIsInZhbHVlIjoiVXNlciIsImRlc2NyaXB0aW9uIjoiVXNlciIsIl9fdiI6MH1dLCJpYXQiOjE2NzEwNDQ3MDgsImV4cCI6MTY3MTA0ODMwOH0.22D-YxwLSZ8E2bCF347BUJ8szr4IUsjz4o9uZuOzMJg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

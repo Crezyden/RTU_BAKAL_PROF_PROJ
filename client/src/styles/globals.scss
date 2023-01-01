@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.header{
+  background-color: rgb(215, 215, 215) ;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .nav_menu {
+    .nav-menu-button{
+      text-decoration: none;
+      text-transform: none;
+      font-size: 28px;
+      color: #000;
+      margin-left: 20px;
+      &:hover{
+        border-bottom: 3px solid black;
+        // color: rgb(0, 170, 255);
+      }
+    }
+    .left{
+      float: right;
+      display: flex;
+      justify-content: space-around;
+      // background-color:aquamarine;
+      // border-bottom: 0px solid black;
+      // border: 1px solid #000; 
+      // border-radius: 2px;
+      .left .nav-menu-button{
+        &:hover{
+          border-bottom: 0px solid black;
+          // color: rgb(0, 170, 255);
+        }
+         border-bottom: 0px;
+      }
+      .drop_menu{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+a{
+}
+.head-top{
+  float: right;
+} 
+
+.container{
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem; 
+  margin-top: 20px;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+  /* Top Navigation Bar */
+  
+  .nextui-c-iWjDFM-hkKLfu-color-default .nextui-c-iWjDFM-kaRBtV-cv{
+    background:rgba(255, 255, 255, 0)
+  }
+  .marker{
+    font-size: 20px;
+  }

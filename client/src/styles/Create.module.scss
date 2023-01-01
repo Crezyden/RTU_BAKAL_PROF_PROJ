@@ -1,0 +1,492 @@
+.h1{
+	text-align: center;		
+}
+.label{
+	font-size: 30px;
+}
+.form{
+	width: 50%;
+	// display: block;
+	// justify-content: center;
+	.item{
+		display: grid;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		margin-left: 10px;
+		.label{
+			font-size: 20px;
+		}
+		input{
+			border-radius: 48px;
+			width: 350px;
+			padding-left: 13px;
+		
+		}
+		.data{
+			width: 150px;
+		}
+		.button{
+			margin-top: 10px;
+			width: 100px;
+			border: 0px;
+			border-radius: 77px;
+			height:30px
+		}
+		.filebuton{
+
+		}
+
+	}
+}
+.cardlist{
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0 5px 0 ;
+	.cardleft{
+		display: block;
+		width: 60%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.cardright{
+		width: 40%;
+
+	}
+	.grids{
+		display: block;
+		width: auto;
+		// margin: 0 20px;
+	} 
+	.receiptname{
+		font-size: 15;
+		
+	}
+	.receiptname{
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0 5px 0;
+		.receiptcontent{
+			display: flex;
+			align-items: center;
+		}
+		.buttonmore{
+			padding: 0;
+			border: none;
+			font: inherit;
+			color: inherit;
+			background-color: transparent;
+			color: rgb(66, 97, 163);
+			text-decoration: underline;
+			&:hover{
+				color: red;
+			}
+		}
+	
+	}
+}
+.marker{
+    font-size: 28px;
+  }
+
+/* The container <div> - needed to position the dropdown content */
+/* Dropdown Content (Hidden by Default) */
+/* Links inside the dropdown */
+/* Change color of dropdown links on hover */
+/* Show the dropdown menu on hover */
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+	&:hover {
+		.dropdown-content {
+			display: block;
+		}
+		.dropbtn {
+			background-color: #3e8e41;
+		}
+	}
+}
+.dropdowncontent {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	.a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		&:hover {
+			background-color: #f1f1f1;
+		}
+	}
+}
+// form 
+.authform{
+	display: flex;
+	justify-content: center;	
+}
+.wrapper {
+	overflow: hidden;
+	max-width: 390px;
+	width: 330px;
+	background: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+	.titletext {
+		display: flex;
+		width: 200%;
+	}
+	.title {
+		width: 50%;
+		font-size: 35px;
+		font-weight: 600;
+		text-align: center;
+	}
+	.formcontainer {
+		width: 100%;
+		overflow: hidden;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+.formcontainer {
+	.forminner {
+		display: flex;
+		width: 200%;
+		display: flex;
+		width: 200%;
+		form {
+			width: 50%;
+			transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+			width: 50%;
+			transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+		}
+	}
+}
+.forminner {
+	form {
+		.field {
+			height: 50px;
+			width: 100%;
+			margin-top: 20px;
+			height: 50px;
+			width: 100%;
+			margin-top: 20px;
+			input {
+				height: 100%;
+				width: 100%;
+				outline: none;
+				padding-left: 15px;
+				border-radius: 5px;
+				border: 1px solid lightgrey;
+				border-bottom-width: 2px;
+				font-size: 17px;
+				transition: all 0.3s ease;
+				height: 100%;
+				width: 100%;
+				outline: none;
+				padding-left: 15px;
+				border-radius: 5px;
+				border: 1px solid lightgrey;
+				border-bottom-width: 2px;
+				font-size: 17px;
+				transition: all 0.3s ease;
+				&:focus {
+					border-color: #fc83bb;
+					border-color: #fc83bb;
+				}
+				&::placeholder {
+					color: #999;
+					transition: all 0.3s ease;
+					color: #999;
+					transition: all 0.3s ease;
+				}
+			}
+		}
+		.passlink {
+			margin-top: 5px;
+			a {
+				color: #fa4299;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.signuplink {
+			text-align: center;
+			margin-top: 30px;
+			a {
+				color: #fa4299;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+form {
+	.field {
+		input {
+			&:focus {
+				&::placeholder {
+					color: #b3b3b3;
+					color: #b3b3b3;
+				}
+			}
+		}
+	}
+	.btn {
+		height: 50px;
+		width: 100%;
+		border-radius: 5px;
+		position: relative;
+		overflow: hidden;
+		.btnlayer {
+			height: 100%;
+			width: 300%;
+			position: absolute;
+			left: -100%;
+			background: -webkit-linear-gradient(right, #a445b2, #fa4299, #a445b2, #fa4299);
+			border-radius: 5px;
+			transition: all 0.4s ease;
+		}
+		&:hover {
+			.btnlayer {
+				left: 0;
+			}
+		}
+		input[type="submit"] {
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			position: relative;
+			background: none;
+			border: none;
+			color: #fff;
+			padding-left: 0;
+			border-radius: 5px;
+			font-size: 20px;
+			font-weight: 500;
+			cursor: pointer;
+		}
+	}
+}
+
+.wrapper {
+	.slidecontrols {
+		position: relative;
+		display: flex;
+		height: 50px;
+		width: 100%;
+		overflow: hidden;
+		margin: 30px 0 10px 0;
+		justify-content: space-between;
+		border: 1px solid lightgrey;
+		border-radius: 5px;
+	}
+}
+.slidecontrols {
+	input[type="radio"] {
+		display: none;
+	}
+	.slide {
+		height: 100%;
+		width: 100%;
+		// color: #fff;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		line-height: 48px;
+		cursor: pointer;
+		z-index: 1;
+		transition: all 0.6s ease;
+	}
+	label.signup {
+		color: #000;
+	}
+	.slidertab {
+		position: absolute;
+		height: 100%;
+		width: 50%;
+		left: 0;
+		z-index: 0;
+		border-radius: 5px;
+		background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+		transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+	}
+}
+#signup {
+	&:checked {
+		~ {
+			.slider-tab {
+				left: 50%;
+			}
+			label.signup {
+				color: #fff;
+				cursor: default;
+				user-select: none;
+			}
+			label.login {
+				color: #000;
+			}
+		}
+	}
+}
+#login {
+	&:checked {
+		~ {
+			label.signup {
+				color: #000;
+			}
+			label.login {
+				cursor: default;
+				user-select: none;
+			}
+		}
+	}
+}
+.message{
+	background: #ffabb26b;
+    padding: 7px;
+    /* color: red; */
+    padding: 16px 16px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+.iconpass{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.input-container {
+	width: 300px;
+  }
+  
+  .inputgroup {
+	position: relative;
+	display: flex;
+	align-items: center;
+  }
+  
+  .inputgroup input {
+	padding: 0.8rem 3rem 0.8rem 0.8rem;
+	width: 100%;
+	outline: none;
+	border: 1px solid #215164;
+	border-radius: 4px;
+	transition: width 0.9s, height 0.9s, border-radius 0.9s;
+	font-size: 16px;
+  }
+  
+  .inputgroup input::placeholder {
+	color: #346a80;
+  }
+  
+  .inputgroup input:focus {
+	border: 1px solid #55b7dd;
+	box-shadow: 0px 0px 2px 2px #55b7dd34;
+  }
+  .inputgroup .toggle {
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+	user-select: none;
+	z-index: 99;
+  }
+  
+  .inputgroup .ripple {
+	background: #fff;
+	display: block;
+	position: absolute;
+	transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .pass-strength {
+	display: flex;
+	align-items: center;
+	margin-top: 3px;
+  }
+  
+  .strength-label {
+	font-size: 12px;
+	margin-left: 10px;
+  }
+  .strength-percent {
+	flex: 1;
+	height: 5px;
+	border-radius: 10px;
+	display: block;
+	background: #eee;
+  }
+  
+  .strength-percent span {
+	display: block;
+	height: 100%;
+	transition: all 0.4s;
+	border-radius: 10px;
+  }
+  
+  .weak {
+	background: red;
+	width: 33%;
+  }
+  
+  .average {
+	background: #ffd000;
+	width: 66%;
+  }
+  
+  .strong {
+	background: green;
+	width: 100%;
+  }
+  .ripple-active{
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	z-index: -1;
+  }
+  .ripple-passive{
+	border-radius: 50%;
+	height: 35px;
+	width: 35px;
+	right: 10px;
+	 z-index: 1;
+  }
+  .pass-input-active{
+	color: #000;
+	background:transparent;
+  }
+  .pass-input-passive{
+	color: #fff;
+	background:#112d37;
+  }
+  
+  .toggle-icon-active{
+	font-size:27px;
+  }
+  .toggle-icon-passive{
+	font-size:25px;
+  }

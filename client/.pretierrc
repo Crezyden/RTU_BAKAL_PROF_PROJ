@@ -1,0 +1,24 @@
+{
+	"trailingComma": "none",
+	"useTabs": true,
+	"semi" : false,
+	"tabWidth": 2,
+	"jsxSingleQuote": true, 
+	"sinleQuots": true,
+	"arrowParens": "avoid",
+	"importOrder":[
+		"<THIRD_PARTY_MUGULES>",
+		"^@/components/(.*)$",
+		"^@/assets/(.*)$",
+		"^@/hooks/(.*)$",
+		"^@/services/(.*)$",
+		"^@/types/(.*)$",
+		"^@/store/(.*)$",
+		"^@/utils/(.*)$",
+		"^../(.*)",
+		"^../(.*)",
+		"^@(.SCSS)$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true 	
+}	
