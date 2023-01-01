@@ -1,3 +1,3 @@
-_RĪGAS TEHNISKĀ UNIVERSITĀTE_
-_bakalaura profesionālā studiju programmas “Datorsistēmas”_
-_PROJEKTA DAĻA_
+#RĪGAS TEHNISKĀ UNIVERSITĀTE
+#bakalaura profesionālā studiju programmas “Datorsistēmas”_
+##PROJEKTA DAĻA
