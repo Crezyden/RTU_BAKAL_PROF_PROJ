@@ -7,6 +7,10 @@ export interface IReceipt extends IBase{
 	recfile: string;
 	city: string;
 	purc_date: string;
-	Val_period: string;
+	desc: string
 
+}
+
+export interface IReceiptDto extends Pick<IReceipt, 'id' | 'name'| 'price' | 'recfile'| 'shop_name'| 'desc'>{
+	
 }

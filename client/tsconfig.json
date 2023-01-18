@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "./app",
+    "baseUrl": "./app/",
     "paths": {
       "@/components":[
         "components/*"
@@ -41,6 +41,6 @@
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/component/user/Mheader.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/component/user/Mheader.js", "app/component/layout/headrer/search"],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,0 @@
-# RĪGAS TEHNISKĀ UNIVERSITĀTE
-## PROJEKTA DAĻA
-## STUDENTS: Deniss Kargins	
-### Apl. nr.- 181LDK001

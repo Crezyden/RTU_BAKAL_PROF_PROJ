@@ -7,7 +7,7 @@ const start = async () => {
         const PORT = process.env.PORT ||3500;  // input porst
         const app = await NestFactory.create(AppModule);
         app.enableCors()        
-        // app.setGlobalPrefix('api');
+        app.setGlobalPrefix('api');
         // app.useGlobalPipes(new ValidationPipe());
         const config = new DocumentBuilder()
         .setTitle('Warranty card digitizing system')
@@ -16,7 +16,7 @@ const start = async () => {
         .build();
       const document = SwaggerModule.createDocument(app, config);
       SwaggerModule.setup('api/docs', app, document);
-    
+        
         await app.listen(PORT, () => console.log('server started on PORT - '+ PORT ))
     } catch (e) {
         console.log(e)

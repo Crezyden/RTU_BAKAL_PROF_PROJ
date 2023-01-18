@@ -50,8 +50,12 @@ export class AuthService {
   //   }
     async login(userDto: LoginUserdto) {
       const user = await this.validateUser(userDto);
-      const token = this.generateToken(user);
-      return token;
+
+     
+      return {
+        users:  this.userService._getUserDetails(user),
+        accesToken:await this.generateToken(user)
+      }
     }
     private async validateUser(userDto: LoginUserdto) {
       const user = await this.userService.findByEmail(userDto.email);
@@ -61,17 +65,18 @@ export class AuthService {
         );
         if (user && doesPasswordMatch) {
           return user;
-        }
+        } 
         throw new UnauthorizedException({
           message: 'Incorrect email and password',
         });
       }
-    private async generateToken(user: User) {
+    async generateToken(user: User) {
+    
       const payload = {id:user.id, email: user.email, role: user.role };
-      return {
-        token: this.jwtService.sign(payload),
-      };
+      
+      const token = this.jwtService.sign(payload)
+      return token
     }
-
+    
 
 }

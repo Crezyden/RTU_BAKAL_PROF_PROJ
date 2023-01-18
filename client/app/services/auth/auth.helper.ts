@@ -2,6 +2,7 @@ export interface IAuthDate {
 	user:{
 		id: string
 		email: string
+		// name: string
 	} | null 
-	accestoken: string
+	accesToken: string
 }

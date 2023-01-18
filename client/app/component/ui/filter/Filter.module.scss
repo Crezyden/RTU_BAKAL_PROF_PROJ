@@ -1,0 +1,100 @@
+.cardlist{
+	// display: flex;
+	// justify-content: space-between;
+	padding: 10px ;
+	border: 1px solid rgb(99, 95, 95);
+	height: 100%;
+	h1{
+		font-size: 20px;
+		font-weight: bold;
+		color: #000;
+		
+	}
+	// .createline{
+	// 	@apply absolute w-0  left-0  -bottom-0.5 bg-opacity-70 transition-all duration-500 rounded-lg;
+	// 	border-top: 2px solid #000;		
+	// 	content: '';
+	// 	width: 200px;
+	// }\
+	.tagscont{
+		display: block;
+		margin: 4px;
+		
+		label{
+			font-size: 18px;
+			color: #000;
+			margin-left: 5px;
+		}
+	}
+	h2{
+		font-size: 15px;
+		font-weight: bold;
+		color: #000;
+		margin-top: 4px
+	}
+	.search{
+		@apply relative w-full;
+
+		>label{
+			@apply block relative;
+		
+		input{
+			@apply rounded-lg py-2 px-2 w-full outline-0 text-black shadow border-y-gray-800;
+			transition: box-shadow 0.4s ease;
+
+			&::placeholder{
+				color: #5c5a69
+			}
+
+			&:focus{
+				@apply shadow-md;
+			}
+		}
+		img{
+			@apply absolute right-2 top-2.5 opacity-90;
+			max-width: 18px;
+		}
+		}
+	}
+	.cardleft{
+		display: block;
+		width: 60%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.cardright{
+		width: 40%;
+
+	}
+	.grids{
+		display: block;
+		width: auto;
+		// margin: 0 20px;
+	} 
+	.receiptname{
+		font-size: 15;
+		
+	}
+	.receiptname{
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0 5px 0;
+		.receiptcontent{
+			display: flex;
+			align-items: center;
+		}
+		.buttonmore{
+			padding: 0;
+			border: none;
+			font: inherit;
+			color: inherit;
+			background-color: transparent;
+			color: rgb(66, 97, 163);
+			text-decoration: underline;
+			&:hover{
+				color: red;
+			}
+		}
+	
+	}
+}

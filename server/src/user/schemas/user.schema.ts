@@ -17,7 +17,7 @@ export class User {
 	email: string;
 	
 	@ApiProperty({example: 'Users', description: 'Users name'})
-	@Prop({required: true})
+	@Prop({required: false})
 	name: string;
 	
 	@ApiProperty({example: '1234567', description: 'Users password'})

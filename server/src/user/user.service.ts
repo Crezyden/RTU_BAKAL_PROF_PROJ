@@ -26,7 +26,7 @@ export class UserService {
 
 	async create(userDto: NewsUserdto):
 	Promise<UserDocument>{
-		const role = await this.roleService.getRoleByValue("User");
+		const role = await this.roleService.getRoleByValue("Users");
 		const user= await this.userModel.create(userDto);
 		await user.$set('role', [role.id]);
 		user.role=[role];
@@ -51,7 +51,7 @@ export class UserService {
 	_getUserDetails(user: UserDocument):UserDetails{
 			return{
 				id: user.id,
-				name: user.name,
+				name: user.email,
 				email: user.email,
 		};
 	}

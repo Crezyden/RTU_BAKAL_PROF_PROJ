@@ -11,5 +11,5 @@ export interface IUser {
 	phone: string;
 	city: string;
 	role: IRole[];
-	receipt: IReceipt[];	
+	receipt?: IReceipt[];	
 }

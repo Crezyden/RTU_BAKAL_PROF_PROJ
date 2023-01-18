@@ -1,0 +1,46 @@
+.header{
+	background-color: #447ee2 ;
+	width: 100%;
+	padding-bottom: 20px;
+
+	.logo{
+		color: #fff;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.headernav {
+		display: flex;
+		align-items: center;	
+		.navmenu{
+			display: inline-block;
+			.navmenuul{
+				display: flex;
+			}
+			.navmenubutton{
+				text-decoration: none;
+				text-transform: none;
+				font-size: 28px;
+				color: #000;
+				margin-left: 20px;
+				&:hover{
+					border-bottom: 3px solid black;
+					// color: rgb(0, 170, 255);
+				}
+			}
+		}
+		.authmenu{
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			.right{
+				display: flex;
+				align-items:center
+			}
+			.left{
+				// float: right;
+				// display: flex;
+				// justify-content: space-around;
+			}		
+		}
+	}
+  }

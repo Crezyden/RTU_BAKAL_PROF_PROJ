@@ -12,19 +12,21 @@ import { RolesGuard } from './../auth/guards/roles.guard';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { User } from './schemas/user.schema';
 import { AddRolleDto } from './dto/add-role.dto';
+import { CurrentUser } from './user.decorator';
 
 @ApiTags('Users')
-@Controller('/user')
+@Controller('user')
 export class UserController {
 
 	constructor(private  usersService: UserService){}
 	@Get('profil')
 	@ApiOperation({summary: 'Get users date'})
 	@ApiResponse({status: 200, type: User})
-    @UseGuards(jwtGuard.Auth)	
-	getUser(@Req() req){
-		const users = this.usersService.findByIdd(req.user.id)
-		// console.log(users)
+	// @Auth()
+	@UseGuards(jwtGuard.Auth)	
+	getUser(@CurrentUser('id') id:string){
+		// console.log(id)
+		const users = this.usersService.getUser(id)
 		return users
 	}
 	
@@ -36,7 +38,7 @@ export class UserController {
 	getAllUser(){
 		return this.usersService.getAllUser();
 	}
-	@Post('/roles')
+	@Post('roles')
 	@Roles('Admin')
 	@ApiOperation({summary: 'Distribute roles'})
 	@ApiResponse({status: 200,})
@@ -45,7 +47,7 @@ export class UserController {
 		return this.usersService.Addroles(dto);
 	}
 	
-	@Delete('/delete')
+	@Delete('delete')
 	@ApiOperation({summary: 'Delete users'})
 	@ApiResponse({status: 200, type:User})
 	@UseGuards(jwtGuard.Auth)
@@ -60,9 +62,9 @@ export class UserController {
 	@HttpCode(200)
 	// @UseInterceptors(FileInterceptor('aatar'))
 	// async updateUser(@UploadedFile() files, @Param('id') id:string, @Body() dto: UserDto){
-	async updateProfile(@Req() req, @Body() dto: NewsUserdto){
+	async updateProfile(@CurrentUser('id') id:string, @Body() dto: NewsUserdto){
 	  // const {avatar} = files
-	  return this.usersService.updateProfile(req.user.id,dto)
+	  return this.usersService.updateProfile(id,dto)
 	}
   
 } 
