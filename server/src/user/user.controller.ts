@@ -24,7 +24,17 @@ export class UserController {
 	@ApiResponse({status: 200, type: User})
 	// @Auth()
 	@UseGuards(jwtGuard.Auth)	
-	getUser(@CurrentUser('id') id:string){
+	getProfil(@CurrentUser('id') id:string){
+		// console.log(id)
+		const users = this.usersService.getUser(id)
+		return users
+	}
+	@Get('by-id/:id')
+	@ApiOperation({summary: 'Get users date'})
+	@ApiResponse({status: 200, type: User})
+	// @Auth()
+	@UseGuards(jwtGuard.Auth)	
+	getUser(@Param('id') id:string){
 		// console.log(id)
 		const users = this.usersService.getUser(id)
 		return users

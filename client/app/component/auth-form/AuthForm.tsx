@@ -10,10 +10,13 @@ import Link from 'next/link';
 import Button from '../ui/button/Button';
 import { useOutside } from '../../hooks/useOutside';
 import { useActions } from './../../hooks/useAction';
-import { useAuth } from './../../hooks/useAuth';
+// import { useAuth } from './../../hooks/useAuth';
 import  axios  from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useContext } from 'react';
+import { AuthContex } from './../../hooks/useContent';
+import { useAuth } from '../../hooks/useAuth';
 
 const AuthForm:FC = () => {
 	// const currentAuthTitle = type === 'login' ? 'register': 'login'
@@ -32,7 +35,7 @@ const AuthForm:FC = () => {
 	const onSubmit:SubmitHandler<IAuthFields>=data =>{
 		if(type =='login'){
 			login(data)
-			router.push('/userhome')
+			// router.push('/userhome')
 			}
 		else if(type == 'register') registerAction(data)
 	}
@@ -69,7 +72,7 @@ const AuthForm:FC = () => {
 						{/* <div className={styled.field}> */}
 						<Field 
 							{ ...register('password',{
-								required: 'password required',
+								required: 'Password required',
 								minLength:{
 									value: 6,
 									message: 'Min password line 6 symbol'
@@ -79,12 +82,12 @@ const AuthForm:FC = () => {
 							error ={errors.password}
 							type ='password'
 							/>						
-								<Button onClick={()=>setType('login')} disabled={isLoading}>Login</Button> 		
+								<Button onClick={()=>setType('login')} >Login</Button> 		
 								<div className={styled.signuplink}>
 									Create new account? 
-									<Link href='/'> 
+									<button onClick={()=>setType('register')}>  
 										<a>Register</a>
-									</Link> 								 									
+									</button> 								 									
 								</div>	
 					</form>
 					{/* )

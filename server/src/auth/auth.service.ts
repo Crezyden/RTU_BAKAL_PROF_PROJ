@@ -75,6 +75,8 @@ export class AuthService {
       const payload = {id:user.id, email: user.email, role: user.role };
       
       const token = this.jwtService.sign(payload)
+    //  const token= [..., role: JSON["stringify"](user.role)]
+      console.log(token +'nexxs')
       return token
     }
     

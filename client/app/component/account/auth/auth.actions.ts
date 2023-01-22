@@ -13,13 +13,13 @@ export const register = createAsyncThunk<IAuthDate, IAuthFields>(
 			toastr.success('Ŗegistr','success')
 			return response
 		} catch (e) {
-			toastError(e)
+			toastError(e) 
 			return thunkApi.rejectWithValue(e)
 		}
 	}
 )
 export const login = createAsyncThunk<IAuthDate, IAuthFields>(
-	`auth/login`, async ({email,password}, thunkApi) =>{
+	`/auth/login`, async ({email,password}, thunkApi) =>{
 		try {
 			const response =await AuthService.login(email,password)
 			toastr.success('Login','success')
@@ -31,6 +31,6 @@ export const login = createAsyncThunk<IAuthDate, IAuthFields>(
 	}
 	)
 	
-export const logout = createAsyncThunk('auth/logout', async()=>{
+export const logout = createAsyncThunk('auth/logout', async () => {
 	return {}
 })

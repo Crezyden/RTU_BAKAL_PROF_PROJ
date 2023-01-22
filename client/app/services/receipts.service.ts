@@ -1,4 +1,4 @@
-import { axiosClassic } from "../api/axios"
+import axiosClassic from "../api/axios"
 import { IReceipt } from './../types/recept.interface';
 
 export const RECEIPT = 'receipt'

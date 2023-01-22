@@ -1,12 +1,17 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import mongoose, { Document} from "mongoose";
+import mongoose, { Document, ObjectId} from "mongoose";
 import { User } from '../../user/schemas/user.schema';
 
 export type RoleDocument = Role & Document;
 
 @Schema()
 export class Role{
+	
+	// @ApiProperty({example: 'users', description: 'Name role'})
+	// @Prop({required: true, unique: true})
+	id: mongoose.Types.ObjectId; 
+	
 	
 	@ApiProperty({example: 'users', description: 'Name role'})
 	@Prop({required: true, unique: true})

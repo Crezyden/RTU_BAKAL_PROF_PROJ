@@ -22,7 +22,8 @@ export const authSlice = createSlice({
 			state.isLoading = false
 			state.user = null
 			state.accesToken = ''			
-		}).addCase(login.pending, state => {
+		})
+		.addCase(login.pending, state => {
 			state.isLoading =true
 		}).addCase(login.fulfilled, ( state, {payload}) => {
 			state.isLoading = false
@@ -32,7 +33,8 @@ export const authSlice = createSlice({
 			state.isLoading = false
 			state.user = null
 			state.accesToken = ''			
-		}).addCase(logout.rejected, state => {
+		})
+		.addCase(logout.rejected, state => {
 			state.isLoading = false
 			state.user = null
 			state.accesToken = ''			

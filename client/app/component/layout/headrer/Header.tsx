@@ -11,6 +11,7 @@ import UploadFile from './uploadfile/Uploadfile';
 const Header: FC = () => {
 	//TODO: GET PROFILE
 	const {user} = useAuth()
+	console.log(user)
 	return (
 		<header className={styles.header}>
 			<div className='container'>
@@ -28,7 +29,7 @@ const Header: FC = () => {
 						<UploadFile/>
 						</div>
 					</div>	
-					</>):null}
+					</>):(<div>No</div>)}
 				</div>				
 			</div> 
 		</header>
