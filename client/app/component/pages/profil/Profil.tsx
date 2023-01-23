@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Menutype from './menutype';
 import Button from './../../ui/button/normal/ButtonStatik';
 import Layout from '../../layout/Layout';
-import Headeradmin from '../../layout/headrer/Headeradmin';
 // import Layout from './../../../../src/layouts/Layouts';
 const usersset =[
 	{
@@ -20,8 +19,8 @@ const usersset =[
 ] 
 const Profil:FC<IProfil> = () => {
 	return (
-		<Layout title='Profill'>
-			<Headeradmin/>
+		<>
+			{/* <Headeradmin/> */}
 			<div className={styled.profil}>
 				<Menutype/>
 					<div className={styled.profilcontent}>
@@ -79,7 +78,7 @@ const Profil:FC<IProfil> = () => {
 
 					</div>
 				</div>
-		</Layout>
+		</>
 	);
 };
 

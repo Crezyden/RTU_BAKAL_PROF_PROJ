@@ -8,7 +8,7 @@ import { api } from "./api/api";
 const persistConfig = {
 	key:'root',
 	storage,
-	whitelist:['auh']
+	whitelist:['auth']
 }
 
 const persistedReducer =persistReducer(persistConfig, rootReducer)
