@@ -84,6 +84,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Readonly</span>
+                                    <span class="modifier">Optional</span>
                                 <a href="#description" >description</a>
                             </li>
                             <li>
@@ -116,6 +117,7 @@
                     <a name="description"></a>
                     <span class="name">
                             <span class="modifier">Readonly</span>
+                            <span class="modifier">Optional</span>
                         <span ><b>description</b></span>
                         <a href="#description"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -199,7 +201,7 @@ export class CreateRoleDto{
 	@ApiProperty({example: &#x27;Users&#x27;, description: &#x27;Role name&#x27;}) 
 	readonly value: string;
 	@ApiProperty({example: &#x27;Users&#x27;, description: &#x27;Role description&#x27;}) 
-	readonly description: string;
+	readonly description?: string;
 }</code></pre>
     </div>
 </div>

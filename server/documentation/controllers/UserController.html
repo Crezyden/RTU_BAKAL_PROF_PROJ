@@ -62,7 +62,7 @@
                 <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>/user</code>
+                <code>user</code>
             </p>
 
 
@@ -93,11 +93,14 @@
                                 <a href="#getAllUser" >getAllUser</a>
                             </li>
                             <li>
+                                <a href="#getProfil" >getProfil</a>
+                            </li>
+                            <li>
                                 <a href="#getUser" >getUser</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#updateUser" >updateUser</a>
+                                <a href="#updateProfile" >updateProfile</a>
                             </li>
                         </ul>
                     </td>
@@ -137,14 +140,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;/roles&#x27;)<br />@Roles(&#x27;Admin&#x27;)<br />@ApiOperation({summary: &#x27;Distribute roles&#x27;})<br />@ApiResponse({status: 200})<br /></code>
+                    <code>@Post(&#x27;roles&#x27;)<br />@Roles(&#x27;Admin&#x27;)<br />@ApiOperation({summary: &#x27;Distribute roles&#x27;})<br />@ApiResponse({status: 200})<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/user/user.controller.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/user/user.controller.ts:56</a></div>
                 </td>
             </tr>
 
@@ -213,14 +216,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;/delete&#x27;)<br />@ApiOperation({summary: &#x27;Delete users&#x27;})<br />@ApiResponse({status: 200, type: User})<br />@UseGuards(jwtGuard.Auth)<br /></code>
+                    <code>@Delete(&#x27;delete&#x27;)<br />@ApiOperation({summary: &#x27;Delete users&#x27;})<br />@ApiResponse({status: 200, type: User})<br />@UseGuards(jwtGuard.Auth)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/user/user.controller.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/user/user.controller.ts:64</a></div>
                 </td>
             </tr>
 
@@ -291,8 +294,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/user/user.controller.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/user/user.controller.ts:48</a></div>
                 </td>
             </tr>
 
@@ -312,16 +315,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getUser"></a>
+                    <a name="getProfil"></a>
                     <span class="name">
-                        <span ><b>getUser</b></span>
-                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getProfil</b></span>
+                        <a href="#getProfil"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getUser(req)</code>
+<code>getProfil(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -335,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/user/user.controller.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/user/user.controller.ts:27</a></div>
                 </td>
             </tr>
 
@@ -351,12 +354,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>req</td>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
@@ -384,18 +391,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="updateUser"></a>
+                    <a name="getUser"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>updateUser</b></span>
-                        <a href="#updateUser"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getUser</b></span>
+                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateUser(req, dto: <a href="../classes/NewsUserdto.html" target="_self">NewsUserdto</a>)</code>
+<code>getUser(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -403,14 +408,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;update&#x27;)<br />@ApiOperation({summary: &#x27;Users update date&#x27;})<br />@ApiResponse({status: 200, type: undefined})<br />@UseGuards(jwtGuard.Auth)<br />@HttpCode(200)<br /></code>
+                    <code>@Get(&#x27;by-id/:id&#x27;)<br />@ApiOperation({summary: &#x27;Get users date&#x27;})<br />@ApiResponse({status: 200, type: User})<br />@UseGuards(jwtGuard.Auth)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/user/user.controller.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/user/user.controller.ts:37</a></div>
                 </td>
             </tr>
 
@@ -431,8 +436,87 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>req</td>
+                                    <td>id</td>
                                     <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProfile"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>updateProfile</b></span>
+                        <a href="#updateProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateProfile(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/NewsUserdto.html" target="_self">NewsUserdto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Post(&#x27;update&#x27;)<br />@ApiOperation({summary: &#x27;Users update date&#x27;})<br />@ApiResponse({status: 200, type: undefined})<br />@UseGuards(jwtGuard.Auth)<br />@HttpCode(200)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/user/user.controller.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -487,19 +571,31 @@ import { RolesGuard } from &#x27;./../auth/guards/roles.guard&#x27;;
 import { ApiOperation, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { User } from &#x27;./schemas/user.schema&#x27;;
 import { AddRolleDto } from &#x27;./dto/add-role.dto&#x27;;
+import { CurrentUser } from &#x27;./user.decorator&#x27;;
 
 @ApiTags(&#x27;Users&#x27;)
-@Controller(&#x27;/user&#x27;)
+@Controller(&#x27;user&#x27;)
 export class UserController {
 
 	constructor(private  usersService: UserService){}
 	@Get(&#x27;profil&#x27;)
 	@ApiOperation({summary: &#x27;Get users date&#x27;})
 	@ApiResponse({status: 200, type: User})
-    @UseGuards(jwtGuard.Auth)	
-	getUser(@Req() req){
-		const users &#x3D; this.usersService.findByIdd(req.user.id)
-		// console.log(users)
+	// @Auth()
+	@UseGuards(jwtGuard.Auth)	
+	getProfil(@CurrentUser(&#x27;id&#x27;) id:string){
+		// console.log(id)
+		const users &#x3D; this.usersService.getUser(id)
+		return users
+	}
+	@Get(&#x27;by-id/:id&#x27;)
+	@ApiOperation({summary: &#x27;Get users date&#x27;})
+	@ApiResponse({status: 200, type: User})
+	// @Auth()
+	@UseGuards(jwtGuard.Auth)	
+	getUser(@Param(&#x27;id&#x27;) id:string){
+		// console.log(id)
+		const users &#x3D; this.usersService.getUser(id)
 		return users
 	}
 	
@@ -511,7 +607,7 @@ export class UserController {
 	getAllUser(){
 		return this.usersService.getAllUser();
 	}
-	@Post(&#x27;/roles&#x27;)
+	@Post(&#x27;roles&#x27;)
 	@Roles(&#x27;Admin&#x27;)
 	@ApiOperation({summary: &#x27;Distribute roles&#x27;})
 	@ApiResponse({status: 200,})
@@ -520,7 +616,7 @@ export class UserController {
 		return this.usersService.Addroles(dto);
 	}
 	
-	@Delete(&#x27;/delete&#x27;)
+	@Delete(&#x27;delete&#x27;)
 	@ApiOperation({summary: &#x27;Delete users&#x27;})
 	@ApiResponse({status: 200, type:User})
 	@UseGuards(jwtGuard.Auth)
@@ -535,9 +631,9 @@ export class UserController {
 	@HttpCode(200)
 	// @UseInterceptors(FileInterceptor(&#x27;aatar&#x27;))
 	// async updateUser(@UploadedFile() files, @Param(&#x27;id&#x27;) id:string, @Body() dto: UserDto){
-	async updateUser(@Req() req, @Body() dto: NewsUserdto){
+	async updateProfile(@CurrentUser(&#x27;id&#x27;) id:string, @Body() dto: NewsUserdto){
 	  // const {avatar} &#x3D; files
-	  return this.usersService.updateProfile(req.user.id,dto)
+	  return this.usersService.updateProfile(id,dto)
 	}
   
 } 

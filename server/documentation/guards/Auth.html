@@ -107,7 +107,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/auth/guards/jwt.guard.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/auth/guards/jwt.guard.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -170,8 +170,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/auth/guards/jwt.guard.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/auth/guards/jwt.guard.ts:13</a></div>
                 </td>
             </tr>
 
@@ -231,19 +231,20 @@ import { JwtService } from &#x27;@nestjs/jwt&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 
 @Injectable()
+// export const Auth &#x3D;()&#x3D;&gt;UseGuards(AuthGuard(&#x27;jwt&#x27;))
 export class Auth implements CanActivate {
 	constructor(private jwtService: JwtService) {
     }
 
     canActivate(context: ExecutionContext): boolean | Promise&lt;boolean&gt; | Observable&lt;boolean&gt; {
-        const req &#x3D; context.switchToHttp().getRequest()
+        const req &#x3D; context.switchToHttp().getRequest() 
         try {
             const authHeader &#x3D; req.headers.authorization;
             const bearer &#x3D; authHeader.split(&#x27; &#x27;)[0]
             const token &#x3D; authHeader.split(&#x27; &#x27;)[1]
 
             if (bearer !&#x3D;&#x3D; &#x27;Bearer&#x27; || !token) {
-                throw new UnauthorizedException({message: &#x27;Пользователь не авторизован&#x27;})
+                throw new UnauthorizedException({message: &#x27;Пользователь не авторизован!&#x27;})
             }
 
             const user &#x3D; this.jwtService.verify(token);

@@ -80,11 +80,6 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#doesPasswordMatch" >doesPasswordMatch</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                    <span class="modifier">Async</span>
                                 <a href="#generateToken" >generateToken</a>
                             </li>
                             <li>
@@ -186,92 +181,8 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="doesPasswordMatch"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>doesPasswordMatch</b></span>
-                        <a href="#doesPasswordMatch"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>doesPasswordMatch(password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, hashedPassword: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/auth/auth.service.ts:45</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>password</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>hashedPassword</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="generateToken"></a>
                     <span class="name">
-                        <span class="modifier">Private</span>
                         <span class="modifier">Async</span>
                         <span ><b>generateToken</b></span>
                         <a href="#generateToken"><span class="icon ion-ios-link"></span></a>
@@ -288,8 +199,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/auth/auth.service.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/auth/auth.service.ts:73</a></div>
                 </td>
             </tr>
 
@@ -575,8 +486,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/auth/auth.service.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/auth/auth.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -674,16 +585,20 @@ export class AuthService {
     return bcrypt.hash(password, 12);
   }
   
-  async doesPasswordMatch(
-    password: string,
-    hashedPassword: string,
-    ): Promise&lt;boolean&gt; {
-      return bcrypt.compare(password, hashedPassword);
-    }
+  // async doesPasswordMatch(
+  //   password: string,
+  //   hashedPassword: string,
+  //   ): Promise&lt;boolean&gt; {
+  //     return bcrypt.compare(password, hashedPassword);
+  //   }
     async login(userDto: LoginUserdto) {
       const user &#x3D; await this.validateUser(userDto);
-      const token &#x3D; this.generateToken(user);
-      return token;
+
+     
+      return {
+        users:  this.userService._getUserDetails(user),
+        accesToken:await this.generateToken(user)
+      }
     }
     private async validateUser(userDto: LoginUserdto) {
       const user &#x3D; await this.userService.findByEmail(userDto.email);
@@ -693,18 +608,21 @@ export class AuthService {
         );
         if (user &amp;&amp; doesPasswordMatch) {
           return user;
-        }
+        } 
         throw new UnauthorizedException({
           message: &#x27;Incorrect email and password&#x27;,
         });
       }
-    private async generateToken(user: User) {
+    async generateToken(user: User) {
+    
       const payload &#x3D; {id:user.id, email: user.email, role: user.role };
-      return {
-        token: this.jwtService.sign(payload),
-      };
+      
+      const token &#x3D; this.jwtService.sign(payload)
+    //  const token&#x3D; [..., role: JSON[&quot;stringify&quot;](user.role)]
+      console.log(token +&#x27;nexxs&#x27;)
+      return token
     }
-
+    
 
 }
 </code></pre>

@@ -281,7 +281,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({example: &#x27;Users&#x27;, description: &#x27;Users name&#x27;})<br />@Prop({required: true})<br />
+                            @ApiProperty({example: &#x27;Users&#x27;, description: &#x27;Users name&#x27;})<br />@Prop({required: false})<br />
                         </code>
                     </td>
                 </tr>
@@ -465,7 +465,7 @@ export class User {
 	email: string;
 	
 	@ApiProperty({example: &#x27;Users&#x27;, description: &#x27;Users name&#x27;})
-	@Prop({required: true})
+	@Prop({required: false})
 	name: string;
 	
 	@ApiProperty({example: &#x27;1234567&#x27;, description: &#x27;Users password&#x27;})

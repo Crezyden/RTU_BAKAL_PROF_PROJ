@@ -61,7 +61,7 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#CurrentUser" title="src/user/users.decorator.ts" ><b>CurrentUser</b>&nbsp;&nbsp;&nbsp;(src/.../users.decorator.ts)</a>
+                            <a href="#CurrentUser" title="src/user/user.decorator.ts" ><b>CurrentUser</b>&nbsp;&nbsp;&nbsp;(src/.../user.decorator.ts)</a>
                         </li>
                         <li>
                             <a href="#jwtConstants" title="src/auth/constants.ts" ><b>jwtConstants</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
@@ -97,7 +97,7 @@
     </table>
 </section>
 
-    <h3>src/user/users.decorator.ts</h3>
+    <h3>src/user/user.decorator.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -296,7 +296,7 @@
         const PORT &#x3D; process.env.PORT ||3500;  // input porst
         const app &#x3D; await NestFactory.create(AppModule);
         app.enableCors()        
-        // app.setGlobalPrefix(&#x27;api&#x27;);
+        app.setGlobalPrefix(&#x27;api&#x27;);
         // app.useGlobalPipes(new ValidationPipe());
         const config &#x3D; new DocumentBuilder()
         .setTitle(&#x27;Warranty card digitizing system&#x27;)
@@ -305,7 +305,7 @@
         .build();
       const document &#x3D; SwaggerModule.createDocument(app, config);
       SwaggerModule.setup(&#x27;api/docs&#x27;, app, document);
-    
+        
         await app.listen(PORT, () &#x3D;&gt; console.log(&#x27;server started on PORT - &#x27;+ PORT ))
     } catch (e) {
         console.log(e)
