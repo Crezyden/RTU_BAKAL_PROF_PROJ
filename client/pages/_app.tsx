@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: TypeAppProps) {
     <NextProgressBar color='#ff7652' startPosition={0.3} stopDelayMs={200} height={3}/>
       <Provider store={store }>
         <PersistGate persistor={persistor} loading={null}>
-        {/* <AuthProvider Component={Component}> */}
+        <AuthProvider Component={Component}>
           <ReduxToastrLib 
           newestOnTop={false} 
           preventDuplicates 
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: TypeAppProps) {
           transitionOut='fadeOut'
           />
           <Component {...pageProps} /> 
-         {/* </AuthProvider>  */}
+         </AuthProvider> 
         </PersistGate>
       </Provider>
     </>

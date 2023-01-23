@@ -1,5 +1,5 @@
 export interface IAuthDate {
-	user:{
+	users:{
 		id: string
 		email: string
 		// name: string
