@@ -17,6 +17,7 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContex } from './../../hooks/useContent';
 import { useAuth } from '../../hooks/useAuth';
+import Layout from './../../../src/layouts/Layouts';
 
 const AuthForm:FC = () => {
 	// const currentAuthTitle = type === 'login' ? 'register': 'login'
@@ -35,67 +36,67 @@ const AuthForm:FC = () => {
 	const onSubmit:SubmitHandler<IAuthFields>=data =>{
 		if(type =='login'){
 			login(data)
-			// router.push('/userhome')
+			router.push('/userhome')
 			}
 		else if(type == 'register') registerAction(data)
 	}
 
 	
 	return ( 
-	<div className={styled.authform}>	
+		// <Layout ti>
+		// <Headers/>
+		<div className={styled.authform}>
 		<div className={styled.wrapper}>
-		<div className={styled.titletext}>
-				<div className={classNames(styled.title,styled.login)}>Login</div>
-			</div>
-			<div className={styled.formcontainer}>
-				<div className={styled.slidecontrols}>
-						<input type="radio" onClick={()=>setType('login')} name="slide" id="login" checked/>
-						<input type="radio" name="slide" id="signup"/>
+				<div className={styled.titletext}>
+					<div className={classNames(styled.title, styled.login)}>Login</div>
+				</div>
+				<div className={styled.formcontainer}>
+					<div className={styled.slidecontrols}>
+						<input type="radio" onClick={() => setType('login')} name="slide" id="login" checked />
+						<input type="radio" name="slide" id="signup" />
 						<label htmlFor="login" className={classNames(styled.slide, styled.login)}>Login</label>
 						<label htmlFor="signup" className={classNames(styled.slide, styled.signup)}>Signup</label>
 						<div className={styled.slidertab}></div>
-           		 </div>				
-				<div className={styled.forminner}>
-				{/* { type == 'login' &&( */}
-					<form className={styled.login} onSubmit={handleSubmit(onSubmit)}>
-						<Field 
-							{ ...register('email',{
-								required: 'Email required',
-								pattern:{
-									value: validEmail,
-									message: 'Not valid email'
-								}
-							})}
-							placeholder='E-mail'
-							error ={errors.email}
-							/>
-						{/* <div className={styled.field}> */}
-						<Field 
-							{ ...register('password',{
-								required: 'Password required',
-								minLength:{
-									value: 6,
-									message: 'Min password line 6 symbol'
-								}
-							})}
-							placeholder='Password'
-							error ={errors.password}
-							type ='password'
-							/>						
-								<Button onClick={()=>setType('login')} >Login</Button> 		
-								<div className={styled.signuplink}>
-									Create new account? 
-									<button onClick={()=>setType('register')}>  
-										<a>Register</a>
-									</button> 								 									
-								</div>	
-					</form>
-					{/* )
-					}: null */}
 					</div>
+					<div className={styled.forminner}>
+						{/* { type == 'login' &&( */}
+						<form className={styled.login} onSubmit={handleSubmit(onSubmit)}>
+							<Field
+								{...register('email', {
+									required: 'Email required',
+									pattern: {
+										value: validEmail,
+										message: 'Not valid email'
+									}
+								})}
+								placeholder='E-mail'
+								error={errors.email} />
+							{/* <div className={styled.field}> */}
+							<Field
+								{...register('password', {
+									required: 'Password required',
+									minLength: {
+										value: 6,
+										message: 'Min password line 6 symbol'
+									}
+								})}
+								placeholder='Password'
+								error={errors.password}
+								type='password' />
+							<Button onClick={() => setType('login')}>Login</Button>
+							<div className={styled.signuplink}>
+								Create new account?
+								<button onClick={() => setType('register')}>
+									<a>Register</a>
+								</button>
+							</div>
+						</form>
+						{/* )
+    }: null */}
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 					// <button className={styles.register} onClick={()=>setType('register')}>Register</button>				
 			
 	);

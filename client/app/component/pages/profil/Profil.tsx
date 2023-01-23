@@ -4,6 +4,9 @@ import styled from './Profil.module.scss'
 import Image from 'next/image';
 import Menutype from './menutype';
 import Button from './../../ui/button/normal/ButtonStatik';
+import Layout from '../../layout/Layout';
+import Headeradmin from '../../layout/headrer/Headeradmin';
+// import Layout from './../../../../src/layouts/Layouts';
 const usersset =[
 	{
 		name:'users',
@@ -17,7 +20,8 @@ const usersset =[
 ] 
 const Profil:FC<IProfil> = () => {
 	return (
-		<div>
+		<Layout title='Profill'>
+			<Headeradmin/>
 			<div className={styled.profil}>
 				<Menutype/>
 					<div className={styled.profilcontent}>
@@ -75,7 +79,7 @@ const Profil:FC<IProfil> = () => {
 
 					</div>
 				</div>
-		</div>
+		</Layout>
 	);
 };
 

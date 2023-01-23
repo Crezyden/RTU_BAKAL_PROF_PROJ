@@ -9,7 +9,7 @@ const Layout: FC<PropsWithChildren<{title:string}>> = ({title , children}) => {
 		<title>{title}</title>
 	</Head>
 	<main className={styled.main}>
-		<Header/>
+		{/* <Header/> */}
 		<section className={styled.content}>
 			<div className={styled.wrapper}>{children}</div>
 		</section> 

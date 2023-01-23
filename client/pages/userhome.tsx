@@ -10,6 +10,7 @@ import Filter from '../app/component/ui/filter/Filter';
 
 // import { Grid } from '@material-ui/core';
 // import Filter from './../component/user/Filter';
+import Headeradmin from './../app/component/layout/headrer/Headeradmin';
 
 const Index  = () => {
 	const router = useRouter()
@@ -22,6 +23,7 @@ const Index  = () => {
 	
 	return (
 		<Layout title='Users profile'>
+			<Headeradmin/>
 			<div className='container'>
 				<h1 className={styles.h1}>YOUR DOCUMENTS</h1>
 			<div className={styles.grid}>

@@ -8,7 +8,7 @@ import { menu } from './menu/menu.data';
 import { useAuth } from '../../../hooks/useAuth';
 import ProfileMenu from './profile-menu/ProfileMenu';
 import UploadFile from './uploadfile/Uploadfile';
-const Header: FC = () => {
+const Headeradmin: FC = () => {
 	//TODO: GET PROFILE
 	const {user} = useAuth()
 	console.log(user)
@@ -20,7 +20,7 @@ const Header: FC = () => {
 						<a className={styles.logo}>DocDig</a>
 					</Link>
 					 {/* { user ?( <>  */}
-					{/* <div className={styles.authmenu}>
+					<div className={styles.authmenu}>
 						<div className={styles.left}>
 						<Menu items={menu}/>
 						</div>
@@ -28,12 +28,12 @@ const Header: FC = () => {
 						<ProfileMenu/>
 						<UploadFile/>
 						</div>
-					</div>	 */}
-					{/* </>):(<div></div>)} */}
+					</div>	
+					{/* </>):(<div>No</div>)} */}
 				</div>				
 			</div> 
 		</header>
 	);
 };
 
-export default Header;
+export default Headeradmin;
