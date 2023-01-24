@@ -5,23 +5,20 @@ import Image from 'next/image';
 import Menutype from './menutype';
 import Button from './../../ui/button/normal/ButtonStatik';
 import Layout from '../../layout/Layout';
-import Headeradmin from '../../layout/headrer/Headeradmin';
+import { NextPageAuth } from '../../../providers/private-route.interface';
+import { api } from '../../account/api/api';
+// import Headeradmin from '../../layout/headrer/Headeradmin';
 // import Layout from './../../../../src/layouts/Layouts';
-const usersset =[
-	{
-		name:'users',
-		lastname:'Userss',
-		email:'users@users.lv',
-		password: '*********',
-		img: '/user/icon.png',
-		phone:'+3712999202',
-		city: 'Rīga'  
-	}
-] 
-const Profil:FC<IProfil> = () => {
+import { useAuth } from './../../../hooks/useAuth';
+const Profil:NextPageAuth<IProfil> = () => {
+	const {users} = useAuth()
+	const {data, isLoading} = api.useGetProfileQuery(null,{
+		skip: !users
+	})
+	if(isLoading) return null
+
 	return (
-		<Layout title='Profill'>
-			<Headeradmin/>
+		
 			<div className={styled.profil}>
 				<Menutype/>
 					<div className={styled.profilcontent}>
@@ -32,55 +29,47 @@ const Profil:FC<IProfil> = () => {
 							{/* <h2>My profils</h2> */}
 							<form>
 								<Image 	src='/user/icon.png' width={100} height={100}/>
-								{usersset.map(usersset =>
 								<table>
 									<tr className={styled.profiluserdata}> 
 										<td className={styled.profiluserdatatitle}>Email</td>
 										<td>
-											<strong> {usersset.email}</strong>
+											<strong> {data?.email}</strong>
 										</td>
 									</tr>
 									<tr className={styled.profiluserdata}> 
 										<td className={styled.profiluserdatatitle}>Password</td>
 										<td>
-											<input type="password" placeholder={usersset.password}/>
+											<input type="password" value={data?.password}/>
 											{/* <strong> </strong> */}
 										</td>
 									</tr>
 									<tr className={styled.profiluserdata}> 
 										<td className={styled.profiluserdatatitle}>Firstname</td>
 										<td>
-											<strong> {usersset.name}</strong>
+											<strong> {data?.name}</strong>
 										</td>
-									</tr>
-									<tr className={styled.profiluserdata}> 
-										<td className={styled.profiluserdatatitle}>Lastname</td>
-										<td>
-											<strong> {usersset.lastname}</strong>
-										</td>	
 									</tr>
 									<tr className={styled.profiluserdata}> 
 										<td className={styled.profiluserdatatitle}>Phone</td>
 										<td>
-											<strong> {usersset.phone}</strong>
+											<strong> {data?.phone}</strong>
 										</td>	
 									</tr>	
 									<tr className={styled.profiluserdata}> 
 										<td className={styled.profiluserdatatitle}>Phone</td>
 										<td>
-											<strong> {usersset.city}</strong>
+											<strong> {data?.city}</strong>
 										</td>	
 									</tr>
 								</table>
-								)}
 							</form>
 							<Button >Update</Button> 
 						</div>
 
 					</div>
 				</div>
-		</Layout>
+		
 	);
 };
-
+Profil.isOnlyUser= true
 export default Profil;

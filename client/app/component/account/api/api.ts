@@ -14,14 +14,14 @@ export const api = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: API_URL,
 		prepareHeaders: (headers, {getState}) => {
-			const token = (getState() as TypeRootState).auth.accesToken
+			const token = (getState() as TypeRootState).auth.accessToken
 			if(token) headers.set(`Authorization`, `Bearer ${token}`)
 			return headers
 		}
 	}),
 	endpoints: builder => ({
 		getProfile: builder.query<IUser, any>({
-			query: () => `${USER}/profile`,
+			query: () => `${USER}/profil`,
 			providesTags: () =>[{type: 'Profile'}]
 		})
 	})  
