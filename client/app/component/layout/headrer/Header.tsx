@@ -10,8 +10,8 @@ import ProfileMenu from './profile-menu/ProfileMenu';
 import UploadFile from './uploadfile/Uploadfile';
 const Header: FC = () => {
 	//TODO: GET PROFILE
-	const {user} = useAuth()
-	console.log(user)
+	const {users} = useAuth()
+	console.log(users)
 	return (
 		<header className={styles.header}>
 			<div className='container'>
@@ -19,8 +19,8 @@ const Header: FC = () => {
 					<Link href='/'>
 						<a className={styles.logo}>DocDig</a>
 					</Link>
-					 {/* { user ?( <>  */}
-					{/* <div className={styles.authmenu}>
+					 { users ?( <> 
+					<div className={styles.authmenu}>
 						<div className={styles.left}>
 						<Menu items={menu}/>
 						</div>
@@ -28,8 +28,8 @@ const Header: FC = () => {
 						<ProfileMenu/>
 						<UploadFile/>
 						</div>
-					</div>	 */}
-					{/* </>):(<div></div>)} */}
+					</div>	 
+				</>):(<div></div>)} 
 				</div>				
 			</div> 
 		</header>

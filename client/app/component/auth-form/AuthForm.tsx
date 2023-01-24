@@ -17,7 +17,6 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContex } from './../../hooks/useContent';
 import { useAuth } from '../../hooks/useAuth';
-import Layout from './../../../src/layouts/Layouts';
 
 const AuthForm:FC = () => {
 	// const currentAuthTitle = type === 'login' ? 'register': 'login'

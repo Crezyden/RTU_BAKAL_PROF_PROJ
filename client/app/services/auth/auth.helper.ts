@@ -4,5 +4,5 @@ export interface IAuthDate {
 		email: string
 		// name: string
 	} | null 
-	accesToken: string
+	accessToken: string
 }

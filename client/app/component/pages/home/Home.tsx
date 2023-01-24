@@ -11,7 +11,7 @@ const Home:FC = () => {
 
 	return ( 
 		<Layout title='Welcome to system'>
-			<Header/>
+			{/* <Header/> */}
 			<AuthForm/>
 			{/* <Login/> */}
 		</Layout>

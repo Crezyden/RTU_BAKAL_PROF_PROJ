@@ -54,7 +54,7 @@ export class AuthService {
      
       return {
         users:  this.userService._getUserDetails(user),
-        accesToken:await this.generateToken(user)
+        accessToken:await this.generateToken(user)
       }
     }
     private async validateUser(userDto: LoginUserdto) {
