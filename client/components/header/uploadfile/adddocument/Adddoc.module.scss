@@ -1,0 +1,93 @@
+.h1{
+	font-size: 30px;
+	text-align: center;		
+}
+.label{
+	font-size: 30px;
+}
+.form{
+	width: 50%;
+	// display: block;
+	// justify-content: center;
+	.item{
+		display: grid;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		margin-left: 10px;
+		.label{
+			font-size: 20px;
+		}
+		.input{
+			border: 1px sonid #000;
+			border-radius: 48px;
+			width: 350px;
+			padding-left: 13px;
+		
+		}
+		.data{
+			width: 150px;
+		}
+		.button{
+			margin-top: 10px;
+			width: 100px;
+			border: 0px;
+			border-radius: 77px;
+			height:30px
+		}
+		.filebuton{
+
+		}
+
+	}
+}
+.cardlist{
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0 5px 0 ;
+	.cardleft{
+		display: block;
+		width: 60%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.cardright{
+		width: 40%;
+
+	}
+	.grids{
+		display: block;
+		width: auto;
+		// margin: 0 20px;
+	} 
+	.receiptname{
+		font-size: 15;
+		
+	}
+	.receiptname{
+		display: flex;
+		justify-content: space-between;
+		margin: 5px 0 5px 0;
+		.receiptcontent{
+			display: flex;
+			align-items: center;
+		}
+		.buttonmore{
+			padding: 0;
+			border: none;
+			font: inherit;
+			color: inherit;
+			background-color: transparent;
+			color: rgb(66, 97, 163);
+			text-decoration: underline;
+			&:hover{
+				color: red;
+			}
+		}
+	
+	}
+}
+.nextback{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-evenly;
+}

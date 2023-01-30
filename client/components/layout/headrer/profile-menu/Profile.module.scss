@@ -1,0 +1,62 @@
+.wrapper {
+	>button {
+		@apply flex items-center;
+
+		img{
+			@apply rounded-full;
+		}
+
+		.name {
+			@apply mx-3 text-white text-opacity-80;
+		}
+
+		>svg{
+			color: #4e4e5d;
+		}
+	}
+
+	.profilemenu{
+		@apply shadow-black  p-4 absolute right-28 w-28 z-20 rounded-lg pb-6; 
+		// top: calc(100% + 1.4rem);
+		background-color: #447ee2;
+		margin-top: 4px;
+		// position: relative;
+		@keyframes scaleIn {
+			0% {
+				opacity: 0;
+				transform: scale(0.9);
+			}
+			50% {
+				opacity: 0.3;
+			}
+			100% {
+				opacity: 0;
+				transform: scale(1);
+			}
+		}
+		.animate-scaleIn {
+			animation: scaleIn .35s ease-in-out;
+		}
+		 >ul{
+			 >li{
+				 >a,
+				 >button{
+
+					@apply py-2.5 block text-white transition-colors relative w-full;
+					text-align: left;	
+					
+					&::after {
+						@apply absolute w-0  left-0  -bottom-0.5 bg-opacity-70 transition-all duration-500 rounded-lg;
+						content: '';
+					}
+					
+					&:hover::after{
+						@apply w-full;
+						border-bottom: 3px solid red;
+
+					}
+				}
+			}
+		}
+	}
+}

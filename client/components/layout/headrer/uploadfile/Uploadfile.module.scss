@@ -1,0 +1,56 @@
+// @apply flex items-center;
+.wrapper {
+	.button {
+		@apply inline-flex mx-2 items-center justify-center text-3xl text-purple-50 ml-6 opacity-75 transition-opacity hover:opacity-100;
+
+	}
+
+	.profilemenu{
+		@apply shadow-black  p-4 absolute right-2 w-44 z-20 rounded-lg pb-6; 
+		// top: calc(100% + 1.4rem);
+		background-color: #272532;
+		background-color: #447ee2;
+		margin-top: 4px;
+		// position: relative;
+		@keyframes scaleIn {
+			0% {
+				opacity: 0;
+				transform: scale(0.9);
+			}
+			50% {
+				opacity: 0.3;
+			}
+			100% {
+				opacity: 0;
+				transform: scale(1);
+			}
+		}
+		.animate-scaleIn {
+			animation: scaleIn .35s ease-in-out;
+		}
+		 >ul{
+			 >li{
+				 >a,
+				 >button{
+
+					@apply py-2.5 block text-white transition-colors relative w-full;
+					text-align: left;	
+					
+					&::after {
+						@apply absolute w-0  left-0  -bottom-0.5 bg-opacity-70 transition-all duration-500 rounded-lg;
+						content: '';
+					}
+					
+					&:hover::after{
+						@apply w-full;
+						border-bottom: 3px solid red;
+
+					}
+				}
+			}
+		}
+	}
+}
+.icons {
+	@apply relative flex items-center
+}

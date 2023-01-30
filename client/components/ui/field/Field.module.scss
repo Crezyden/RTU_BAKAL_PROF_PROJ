@@ -1,0 +1,38 @@
+.field {
+	height: 50px;
+	margin-top: 0.5rem;
+
+	input {
+		// margin-top: 20px;
+		height: 100%;
+		width: 100%;
+		outline: none;
+		padding-left: 15px;
+		border-radius: 5px;
+		border: 1px solid lightgrey;
+		border-bottom-width: 2px;
+		font-size: .8rem;
+		transition: all 0.3s ease;
+
+		&:focus {
+			border-color: #fc83bb;
+			border-color: #fc83bb;
+		}
+
+		&::placeholder {
+			color: #999;
+			transition: all 0.3s ease;
+			color: #999;
+			transition: all 0.3s ease;
+		}
+	}
+}
+
+.error {
+	// position: absolute;
+	// bottom: -1.25rem;
+	// left: 2rem;
+	width: 100%;
+	font-size: 15px;
+	color: red
+}

@@ -1,0 +1,28 @@
+.editor{
+	@apply relative block mt-6;
+
+	>input{
+		@apply rounded-lg py-2 px-4 w-full resize-none outline-8 text-whitte;
+		background-color: #353348; 
+		transition: box-shadow 0.4s ease;
+		box-shadow: 0 3px 12px rgb(0, 0, 0.03);
+		min-height: 200px;
+		 
+		&::placeholder{
+			color: #5c5a69
+		}
+		&:focus{
+			box-shadow: 0 3px 6px rgba(0,0,0,0.1)
+		}
+	}
+}
+.error{
+	.error{
+		position: absolute;
+		bottom: -1.25rem;
+		left: 2rem;
+		width: 100%;
+	
+	}
+	font-size: 0.8rem;
+}
